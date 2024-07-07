@@ -1,10 +1,11 @@
 import React from 'react'
+import propTypes from 'prop-types'
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme={props.bgDark ? "dark" : "light"}>
         <div className="container-fluid">
-            <a className="navbar-brand" href="/">TextUtils</a>
+            <a className="navbar-brand" href="/">{props.title}</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
@@ -27,4 +28,13 @@ const Navbar = () => {
   )
 }
 
+Navbar.propTypes = {
+    title: propTypes.string, 
+    bgDark: propTypes.bool
+}
+
+Navbar.defaultProps = {
+    title: "title",
+    bgDark: true
+}
 export default Navbar

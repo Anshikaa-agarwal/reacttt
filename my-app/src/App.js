@@ -1,11 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './component/Navbar';
+import TextForm from './component/TextForm';
 
 function App() {
   return (
     <>
-    <Navbar></Navbar>
+    <Navbar title="TextUtils" bgDark={true}></Navbar>
+    <div className="content">
+    <TextForm></TextForm>
+    </div>
     </>
   );
 }
