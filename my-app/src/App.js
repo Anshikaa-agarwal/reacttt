@@ -7,7 +7,7 @@ function App() {
     <>
     <Navbar title="TextUtils" bgDark={true}></Navbar>
     <div className="content">
-    <TextForm></TextForm>
+      <TextForm heading="Enter text to analyze:"></TextForm>
     </div>
     </>
   );

@@ -1,15 +1,33 @@
 import React from 'react'
+import { useState } from 'react'
+import Button from './Button';
+import './textForm.css'
 
-export default function TextForm() {
+export default function TextForm(props) {
+  const [text, setText] = useState("")
+  console.log(text);
+
+  const handleOnChange = (event) => {
+    console.log("handle on change")
+    setText(event.target.value)
+  }
+
+  const handleUpClick = () => {
+    setText(text.toUpperCase());
+  }
+  const handleDownClick = () => {
+    setText(text.toLowerCase());
+  }
   return (
     <>
-      <div class="mb-3">
-        <label htmlFor="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
-        </div>
-        <div class="mb-3">
-        <label htmlFor="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <h4>{props.heading}</h4>
+      <div className="mb-3">
+        <textarea className="form-control" id="textbox" rows="3" placeholder="Enter text here" value={text} onChange={handleOnChange}></textarea>
+      </div>
+
+      <div className="btn-container">
+        <Button text="Convert to UpperCase" func ={handleUpClick}></Button>
+        <Button text="Convert to LowerCase" func ={handleDownClick}></Button>
       </div>
     </>
   )
