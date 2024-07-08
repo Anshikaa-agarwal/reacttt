@@ -19,6 +19,9 @@ export default function TextForm(props) {
   const handleDownClick = () => {
     setText(text.toLowerCase());
   }
+  const handleClear = () => {
+    setText("");
+  }
   return (
     <>
       <h4>{props.heading}</h4>
@@ -27,8 +30,9 @@ export default function TextForm(props) {
       </div>
 
       <div className="btn-container">
-        <Button text="Convert to UpperCase" func ={handleUpClick}></Button>
-        <Button text="Convert to LowerCase" func ={handleDownClick}></Button>
+        <Button text="Convert to UpperCase" func ={handleUpClick} color = "blue"></Button>
+        <Button text="Convert to LowerCase" func ={handleDownClick} color = "blue"></Button>
+        <Button text="Clear" func ={handleClear} color = "red"></Button>
       </div>
 
       <Summary textinput={text}></Summary>
