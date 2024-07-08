@@ -2,9 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import Button from './Button';
 import './textForm.css'
+import Summary from './Summary';
 
 export default function TextForm(props) {
-  const [text, setText] = useState("")
+  const [text, setText] = useState('')
   console.log(text);
 
   const handleOnChange = (event) => {
@@ -29,6 +30,8 @@ export default function TextForm(props) {
         <Button text="Convert to UpperCase" func ={handleUpClick}></Button>
         <Button text="Convert to LowerCase" func ={handleDownClick}></Button>
       </div>
+
+      <Summary textinput={text}></Summary>
     </>
   )
 }
