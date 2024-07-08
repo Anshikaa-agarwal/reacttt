@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Button from './Button';
 import './textForm.css'
 import Summary from './Summary';
+import About from './About';
 
 export default function TextForm(props) {
   const [text, setText] = useState('')
