@@ -23,11 +23,15 @@ export default function TextForm(props) {
   const handleClear = () => {
     setText("");
   }
+  const myStyle = {
+    color: props.mode === 'light' ? 'black' : 'white',
+    backgroundColor: props.mode === 'light' ? 'white' : '#373E42'
+};
   return (
     <>
       <h4>{props.heading}</h4>
-      <div className="mb-3">
-        <textarea className="form-control" id="textbox" rows="3" placeholder="Enter text here" value={text} onChange={handleOnChange}></textarea>
+      <div className="mb-3" style={myStyle}>
+        <textarea className="form-control" id="textbox" rows="3" placeholder="Enter text here" value={text} onChange={handleOnChange} style={myStyle}></textarea>
       </div>
 
       <div className="btn-container">
@@ -37,6 +41,8 @@ export default function TextForm(props) {
       </div>
 
       <Summary textinput={text}></Summary>
+
+      <button className="btn btn-primary my-4" onClick={props.toggleMode}>Enable {props.mode==='light' ? "Dark" : "Light"} Mode</button>
     </>
   )
 }

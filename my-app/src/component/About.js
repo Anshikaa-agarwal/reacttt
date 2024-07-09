@@ -47,7 +47,7 @@ export default function About(props) {
                     </div>
                 </div>
             </div>
-            <button className="btn btn-primary my-4" onClick={props.toggleMode}>Enable {props.mode==='light' ? "Dark" : "Light"} Mode</button>
+            
         </div>
     );
 }

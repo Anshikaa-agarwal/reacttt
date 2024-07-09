@@ -19,8 +19,8 @@ function App() {
     <div className='outer-box'>
     <Navbar title="TextUtils" mode={mode}></Navbar>
     <div className="content">
-      {/* <TextForm heading="Enter text to analyze:" ></TextForm> */}
-      <About mode={mode} toggleMode={toggleMode}></About>
+      <TextForm heading="Enter text to analyze:" mode={mode} toggleMode={toggleMode}></TextForm>
+      {/* <About mode={mode} toggleMode={toggleMode}></About> */}
     </div>
     </div>
   );
