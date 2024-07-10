@@ -4,6 +4,12 @@ import Navbar from './component/Navbar';
 import TextForm from './component/TextForm';
 import About from './component/About'
 import { useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -16,13 +22,21 @@ function App() {
   }, [mode]);
   
   return (
+    <Router>
     <div className='outer-box'>
     <Navbar title="TextUtils" mode={mode}></Navbar>
     <div className="content">
-      <TextForm heading="Enter text to analyze:" mode={mode} toggleMode={toggleMode}></TextForm>
-      {/* <About mode={mode} toggleMode={toggleMode}></About> */}
+    <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/">
+            <TextForm heading="Enter text to analyze:" mode={mode} toggleMode={toggleMode}></TextForm>
+          </Route>
+        </Switch>
     </div>
     </div>
+    </Router>
   );
 }
 
